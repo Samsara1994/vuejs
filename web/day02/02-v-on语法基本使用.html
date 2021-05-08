@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{counter}}</h2>
+    <button click="counter++">+</button>
+    <button click="counter--">-</button>
+    <br>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+    <!--方法不需要额外参数，那么方法后面的（）可以不加 -->
+    <!--方法需要额外参数，但是没有添加或者括号内为空，则默认会将原生的event事件传进去-->
+    <!--如果同时需要传递某些参数和event事件，则使用(参数,$event)方式-->
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+       el: '#app',
+       data:{
+         message:'hello',
+         counter:0
+       },
+      methods:{
+        increment(){
+          this.counter++;
+        },
+        decrement(){
+          this.counter--;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

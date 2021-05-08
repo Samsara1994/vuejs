@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mustache</title>
+  <!--双大括号语法-->
+</head>
+<body>
+ <div id="app">
+   <h2>{{message}}</h2>
+   <h2>{{firstName + ' ' +lastName}}</h2>
+   <h2>{{firstName}} {{lastName}}</h2>
+   <h2>{{counter*2}}</h2>
+   <!--可以使用如上简单的语法格式-->
+ </div>
+
+ <script src="../../js/vue.js"></script>
+ <script>
+   const app = new Vue({
+      el: '#app',
+      data:{
+        message:'hello',
+        firstName:'hu',
+        lastName:'XiaoLin',
+        counter: 100
+      }
+   })
+ </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <!--实现单击列表某项，该项变为红色，其他项为黑色-->
+  <div id="app">
+    <ul>
+      <li v-for="(m,index) in movies" v-on:click="isClick" :class={active:isActive}>{{index+1}}-{{m}}</li>
+    </ul>
+  </div>
+  <script src="../../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+       el: '#app',
+       data:{
+         movies:['海王','火影忍者','海尔兄弟','红海行动'],
+         isActive:false
+       },
+       methods:{
+         isClick:function () {
+
+            this.isActive = true;
+         }
+       }
+    })
+  </script>
+</body>
+</html>

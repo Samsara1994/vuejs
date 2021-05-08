@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-text</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+  <h2 v-text="message">,vueJs</h2>
+  <!--message中的内容会将  ,vueJs  覆盖掉-->
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data:{
+      message:'hello'
+    }
+  })
+</script>
+</body>
+</html>

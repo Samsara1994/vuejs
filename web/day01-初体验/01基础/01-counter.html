@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+</head>
+<body>
+    <div id="app">
+        <h2>当前计数：{{count}}</h2>
+        <button v-on:click="add()">+</button>
+        <button v-on:click="sub()">-</button>
+        <!--  v-on:click 等价于 @click  -->
+    </div>
+    <script src="../../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+               count:0
+            },
+            methods:{
+                add:function () {
+                    this.count++;
+                },
+                sub:function () {
+                    if (this.count >=1){
+                        this.count--;
+                    }else{ // 防止减为负数
+                        this.count =0;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

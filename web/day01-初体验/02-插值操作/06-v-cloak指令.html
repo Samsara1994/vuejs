@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cloak</title>
+
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="app">
+    <h2 v-cloak>{{message}}</h2>
+  </div>
+  <script src="../../js/vue.js"></script>
+  <script>
+    // vue 解析之前，div中存在一个叫v-cloak的属性（该属性用于遮挡自己）
+    // vue 解析之后，会将div中的属性删除。使用v-cloak指令可以防止HTML自上而下解析卡顿时，导致
+    // div中的内容错误显示
+    setTimeout(function () {
+      const app = new Vue({
+        el: '#app',
+        data:{
+          message:'hello'
+        }
+      })
+    },1000)
+  </script>
+</body>
+</html>
