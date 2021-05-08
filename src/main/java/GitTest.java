@@ -13,6 +13,6 @@ public class GitTest {
         System.out.println("hello git5  master");
         System.out.println("hello git6  hot-fix");
         System.out.println("hello git7  master");
-
+        System.out.println("hello git8  remote master");
     }
 }
